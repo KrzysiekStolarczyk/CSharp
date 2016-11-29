@@ -1,0 +1,17 @@
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\bin\Debug\JanuszowyExpert.exe.config
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\bin\Debug\JanuszowyExpert.exe
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\bin\Debug\JanuszowyExpert.pdb
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\Views\MainWindow.g.cs
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\App.g.cs
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert_MarkupCompile.cache
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert_MarkupCompile.lref
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\Views\MainWindow.baml
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.g.resources
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.Properties.Resources.resources
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.csproj.GenerateResource.Cache
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.exe
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.pdb
+c:\users\kuczma\documents\visual studio 2015\Projects\JanuszowyExpert\JanuszowyExpert\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\bin\Debug\JanuszowyExpert.exe.config
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.exe
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.pdb
