@@ -9,6 +9,9 @@ namespace JanuszowyExpert.ViewModels
 
         //public Questions Questions
         public Questions Questions { get; set; }
+        public Questions checkBoxYes { get; set; }
+        public Questions checkBoxNo { get; set; }
+
         public Cars car= new Cars();
 
         public MainViewModel()

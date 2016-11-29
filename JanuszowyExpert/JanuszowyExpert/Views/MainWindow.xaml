@@ -14,7 +14,19 @@
         <ViewModels:MainViewModel/>
     </Window.DataContext>
     <Grid Background="Green" Margin="0,0,2,-1">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,93,0,0" TextWrapping="Wrap" Text="{Binding Questions.QuestionContext}" VerticalAlignment="Top" Height="41" Width="659" FontSize="20"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="10,18,10,0" TextWrapping="Wrap" Text="Witamy w systemie ekspertowym- JANUSZ DORADCA" VerticalAlignment="Top" FontSize="28" Width="717" FontWeight="Bold"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="378*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,56.277,0,0" TextWrapping="Wrap" Text="{Binding Questions.QuestionContext}" VerticalAlignment="Top" Height="41" Width="659" FontSize="20" Grid.Row="1"/>
+        <TextBlock x:Name="textBlock1" Margin="10,18,10,0" TextWrapping="Wrap" Text="Witamy w systemie ekspertowym- JANUSZ DORADCA" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Button x:Name="buttonNextQuestion" Content="Następne pytanie" HorizontalAlignment="Left" Margin="97,125.277,0,0" VerticalAlignment="Top" Width="158" Height="43" Grid.Row="1"/>
+        <StackPanel HorizontalAlignment="Left" Height="62" Margin="10,117,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82">
+            <RadioButton x:Name="radioButtonYes" Content="Tak" FontSize="20" FontWeight="Bold" Margin="15,0,16,0"/>
+            <RadioButton x:Name="radioButtonNo" Content="Nie" FontSize="20" FontWeight="Bold" Margin="16,0,15,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <!--<CheckBox x:Name="checkBoxYes" Content="Tak" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,123,0,0" FontSize="20" Background="White" Height="26" Grid.Row="1" IsChecked="{Binding checkBoxYes, Mode=OneWay}"/>-->
+            <!--<CheckBox x:Name="checkBoxNo" Content="Nie" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,157,0,0" FontSize="20" Background="White" Height="26" Grid.Row="1"/>-->
+
+        </StackPanel>
     </Grid>
 </Window>

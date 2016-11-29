@@ -3,7 +3,8 @@
     public class Questions
     {
         public string QuestionContext { get; set; }
-
+        public bool checkBoxYes { get; set; }
+        public bool checkBoxNo { get; set; }
 
         public Questions(string QuestionContext1)
         {
