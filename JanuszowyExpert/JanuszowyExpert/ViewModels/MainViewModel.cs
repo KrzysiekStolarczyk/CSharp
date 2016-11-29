@@ -9,15 +9,19 @@ namespace JanuszowyExpert.ViewModels
 
         //public Questions Questions
         public Questions Questions { get; set; }
+        public Cars car= new Cars();
 
         public MainViewModel()
         {
+            car.AddCarsToList();
+            //MessageBox.Show(car.ListOfCars.Count.ToString());
+
             Questions = new Questions();
             Questions.QuestionContext = "cuka";
 
-            Thread.Sleep(5000);
-            Questions.QuestionContext = "cuka2das";
         }
+
+
 
 
     }
