@@ -8,12 +8,13 @@
     x:Class="JanuszowyExpert.MainWindow"
     
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="445.109" Width="746.604">
 
     <Window.DataContext>
         <ViewModels:MainViewModel/>
     </Window.DataContext>
-    <Grid Background="Green">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="66,62,0,0" TextWrapping="Wrap" Text="{Binding Questions.QuestionContext}" VerticalAlignment="Top" Height="60" Width="304" FontSize="40"/>
+    <Grid Background="Green" Margin="0,0,2,-1">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,93,0,0" TextWrapping="Wrap" Text="{Binding Questions.QuestionContext}" VerticalAlignment="Top" Height="41" Width="659" FontSize="20"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="10,18,10,0" TextWrapping="Wrap" Text="Witamy w systemie ekspertowym- JANUSZ DORADCA" VerticalAlignment="Top" FontSize="28" Width="717" FontWeight="Bold"/>
     </Grid>
 </Window>

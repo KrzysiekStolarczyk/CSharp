@@ -17,10 +17,10 @@ namespace JanuszowyExpert.ViewModels
             //MessageBox.Show(car.ListOfCars.Count.ToString());
 
             Questions = new Questions();
-            Questions.QuestionContext = "cuka";
+            //Questions.QuestionContext = "cuka";
+            Questions.AskQuestions();
 
         }
-
 
 
 

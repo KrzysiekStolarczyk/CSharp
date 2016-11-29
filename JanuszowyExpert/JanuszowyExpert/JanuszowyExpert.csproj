@@ -63,7 +63,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\BaseRulesAndFacts.cs" />
     <Compile Include="Models\Cars.cs" />
+    <Compile Include="Models\DecisionAlgorithm.cs" />
     <Compile Include="Models\Questions.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">

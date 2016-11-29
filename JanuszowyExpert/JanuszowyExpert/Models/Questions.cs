@@ -14,5 +14,13 @@
         {
                 
         }
+
+
+        public void AskQuestions()
+        {
+
+            QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
+
+        }
     }
 }
