@@ -49,6 +49,20 @@ namespace JanuszowyExpert.ViewModels
             }
         }
 
+        private bool _currentSelection;
+        public bool CurrentSelection
+        {
+            get { return _currentSelection; }
+            set
+            {
+                if (_currentSelection != value)
+                {
+                    _currentSelection = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        
 
 
         public void AskQuestions()

@@ -11,6 +11,13 @@ namespace JanuszowyExpert.Models
         public bool checkBoxNo { get; set; }
         public bool ActiveButton { get; set; }
         public bool CurentChange { get; set; }
+        public bool Option1 { get; set; }
+        public enum Opcja
+        {
+            tak,
+            nie
+
+        }
         //public DelegateCommand NextQuestion { get; set; }
         //BaseClassViewmodel test = new BaseClassViewmodel();
 
@@ -19,7 +26,7 @@ namespace JanuszowyExpert.Models
         {
 
         }
-       
+
 
 
         //public Questions(string QuestionContext1)
@@ -30,7 +37,7 @@ namespace JanuszowyExpert.Models
         //public Questions()
         //{
         //    NextQuestion = new DelegateCommand(AskQuestions2, Czy);
-            
+
         //}
 
 
@@ -38,6 +45,6 @@ namespace JanuszowyExpert.Models
         {
             return true;
         }
-       
+
     }
 }
