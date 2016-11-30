@@ -11,7 +11,7 @@ namespace JanuszowyExpert.Models
         public bool checkBoxNo { get; set; }
         public bool ActiveButton { get; set; }
         public bool CurentChange { get; set; }
-        public bool Option1 { get; set; }
+        public bool? Option1 { get; set; }
         public enum Opcja
         {
             tak,

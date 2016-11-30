@@ -30,8 +30,8 @@
             
             <!--<RadioButton GroupName="yn" x:Name="radioButtonYes" Content="Tak" IsChecked="{Binding CurrentSelection}" FontSize="20" FontWeight="Bold" Margin="14,0,17,0"/>
             <RadioButton GroupName="yn" x:Name="radioButtonNo" Content="Nie"  FontSize="20" FontWeight="Bold" Margin="14,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="51"/>-->
-            <RadioButton GroupName="yn" x:Name="radioButtonYes" Content="Tak" IsChecked="{Binding Path=CurrentSelection, Mode=TwoWay, Converter={StaticResource enumConverter},ConverterParameter=tak}" FontSize="20" FontWeight="Bold" Margin="14,0,17,0"/>
-            <RadioButton GroupName="yn" x:Name="radioButtonNo" Content="Nie"   IsChecked="{Binding Path=CurrentSelection, Mode=TwoWay, Converter={StaticResource enumConverter},ConverterParameter=nie}" FontSize="20" FontWeight="Bold" Margin="14,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="51"/>
+            <RadioButton GroupName="yn" x:Name="radioButtonYes" Content="Tak"  IsChecked="{Binding Path=CurentSelection, Mode=TwoWay}" FontSize="20" FontWeight="Bold" Margin="14,0,17,0"/>
+            <RadioButton GroupName="yn" x:Name="radioButtonNo" Content="Nie"   IsChecked="{Binding Path=CurentSelection, Mode=TwoWay}" FontSize="20" FontWeight="Bold" Margin="14,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="51"/>
         </StackPanel>
 
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="103,239,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Path=BoundNumber,Mode=TwoWay}"/>

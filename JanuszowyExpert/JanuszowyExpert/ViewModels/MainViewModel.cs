@@ -50,7 +50,7 @@ namespace JanuszowyExpert.ViewModels
         }
 
         private bool _currentSelection;
-        public bool CurrentSelection
+        public bool Option1
         {
             get { return _currentSelection; }
             set
