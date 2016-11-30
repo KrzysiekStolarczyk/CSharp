@@ -67,6 +67,8 @@
     <Compile Include="Models\Cars.cs" />
     <Compile Include="Models\DecisionAlgorithm.cs" />
     <Compile Include="Models\Questions.cs" />
+    <Compile Include="ViewModels\BaseClassViewmodel.cs" />
+    <Compile Include="ViewModels\DelegateCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
