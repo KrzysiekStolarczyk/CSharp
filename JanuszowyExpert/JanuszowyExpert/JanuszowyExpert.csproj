@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="Models\BaseRulesAndFacts.cs" />
     <Compile Include="Models\Cars.cs" />
+    <Compile Include="Models\Command.cs" />
     <Compile Include="Models\DecisionAlgorithm.cs" />
     <Compile Include="Models\Questions.cs" />
     <Compile Include="ViewModels\BaseClassViewmodel.cs" />

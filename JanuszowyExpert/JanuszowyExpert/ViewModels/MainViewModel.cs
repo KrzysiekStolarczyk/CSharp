@@ -4,36 +4,46 @@ using System.Windows;
 using System.Threading;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace JanuszowyExpert.ViewModels
 {
-    public class MainViewModel : BaseClassViewmodel//: INotifyPropertyChanged
+    public class MainViewModel : BaseClassViewmodel
     {
 
+        public ICommand MyComand { get; set; }
+
         public Cars car = new Cars();
+        //public Questions ques= new  Questions();
 
         public MainViewModel()
         {
             car.AddCarsToList();
-
+            //ques.ActiveButton = false;
             AskQuestions();
+            MyComand = new Command(ExecuteMethod, canExecuteMethod);
         }
 
-
-        private bool _bountNumber;
-        public bool CheckBoxYes
+        private bool canExecuteMethod(object parameter)
         {
-            get { return _bountNumber; }
-            set
+            return true;
+        }
+
+        private void ExecuteMethod(object parameter)
+        {
+           //MessageBox.Show("No code behind");
+
+            if (_currentSelectionY == false & _currentSelectionN == false)
             {
-                if (_bountNumber != value)
-                {
-                    _bountNumber = value;
-                    OnPropertyChanged();
-                    AskQuestions2();
-                }
+                QuestionContext = "Zaznacz odpowiedz ...";
             }
         }
+
+
+
+
+
+
 
         private string _question;
         public string QuestionContext
@@ -49,21 +59,33 @@ namespace JanuszowyExpert.ViewModels
             }
         }
 
-        private bool _currentSelection;
-        public bool Option1
+        private bool _currentSelectionY;
+        public bool CurentSelectionY
         {
-            get { return _currentSelection; }
+            get { return _currentSelectionY; }
             set
             {
-                if (_currentSelection != value)
+                if (_currentSelectionY != value)
                 {
-                    _currentSelection = value;
+                    _currentSelectionY = value;
                     OnPropertyChanged();
                 }
             }
         }
-        
 
+        private bool _currentSelectionN;
+        public bool CurentSelectionN
+        {
+            get { return _currentSelectionN; }
+            set
+            {
+                if (_currentSelectionN != value)
+                {
+                    _currentSelectionN = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         public void AskQuestions()
         {
@@ -72,11 +94,13 @@ namespace JanuszowyExpert.ViewModels
             QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
 
         }
-        public void AskQuestions2()
+        public void Test()
         {
 
-            QuestionContext = "Nie chuju?";
+            //QuestionContext = "Nie chuju?";
             //_question = "Nie chuju?";
+
+            MessageBox.Show("Test");
         }
 
 

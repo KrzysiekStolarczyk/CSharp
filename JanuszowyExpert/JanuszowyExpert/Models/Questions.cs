@@ -7,17 +7,11 @@ namespace JanuszowyExpert.Models
     public class Questions
     {
         public string QuestionContext { get; set; }
-        public bool checkBoxYes { get; set; }
-        public bool checkBoxNo { get; set; }
+        //public bool checkBoxYes { get; set; }
+        //public bool checkBoxNo { get; set; }
         public bool ActiveButton { get; set; }
-        public bool CurentChange { get; set; }
-        public bool? Option1 { get; set; }
-        public enum Opcja
-        {
-            tak,
-            nie
-
-        }
+        public bool CurentSelectionY { get; set; }
+        public bool CurentSelectionN { get; set; }
         //public DelegateCommand NextQuestion { get; set; }
         //BaseClassViewmodel test = new BaseClassViewmodel();
 
