@@ -12,15 +12,9 @@ namespace JanuszowyExpert.ViewModels
 
         public Cars car = new Cars();
 
-        int a = 1;
-
-
         public MainViewModel()
         {
             car.AddCarsToList();
-            //MessageBox.Show(car.ListOfCars.Count.ToString());
-
-            //Questions.ActiveButton = (_bountNumber == true) ? false: true;
 
             AskQuestions();
         }
@@ -36,6 +30,7 @@ namespace JanuszowyExpert.ViewModels
                 {
                     _bountNumber = value;
                     OnPropertyChanged();
+                    AskQuestions2();
                 }
             }
         }
@@ -58,11 +53,9 @@ namespace JanuszowyExpert.ViewModels
 
         public void AskQuestions()
         {
-            if (a == 1)
-            {
 
-            }
-            QuestionContext = $"{DateTime.Now.ToString()}Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
+            //QuestionContext = $"{DateTime.Now.ToString()}Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
+            QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
 
         }
         public void AskQuestions2()

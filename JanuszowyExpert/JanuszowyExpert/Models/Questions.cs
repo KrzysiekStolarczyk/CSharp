@@ -10,6 +10,7 @@ namespace JanuszowyExpert.Models
         public bool checkBoxYes { get; set; }
         public bool checkBoxNo { get; set; }
         public bool ActiveButton { get; set; }
+        public bool CurentChange { get; set; }
         //public DelegateCommand NextQuestion { get; set; }
         //BaseClassViewmodel test = new BaseClassViewmodel();
 

@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <TextBlock x:Name="textBlockQuestion" HorizontalAlignment="Left" Margin="10,56.277,0,0" TextWrapping="Wrap" Text="{Binding QuestionContext, Mode=TwoWay}" VerticalAlignment="Top" Height="41" Width="659" FontSize="20" Grid.Row="1"/>
         <TextBlock x:Name="textBlockTitle" Margin="10,18,10,0" TextWrapping="Wrap" Text="Witamy w systemie ekspertowym- JANUSZ DORADCA" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Grid.RowSpan="2"/>
-        <Button x:Name="buttonNextQuestion" Content="Następne pytanie" HorizontalAlignment="Left" Margin="97,125,0,0" VerticalAlignment="Top" Width="158" Height="43" Grid.Row="1" Command="{Binding NextQuestion}" IsEnabled="False"/>
+        <Button x:Name="buttonNextQuestion" Content="Następne pytanie" HorizontalAlignment="Left" Margin="97,125,0,0" VerticalAlignment="Top" Width="158" Height="43" Grid.Row="1" Command="{Binding NextQuestion}" IsEnabled="{Binding CheckBoxYes}"/>
 
         <StackPanel HorizontalAlignment="Left" Height="51" Margin="10,117,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82">
             <RadioButton GroupName="yn" x:Name="radioButtonYes" Content="Tak" IsChecked="{Binding CheckBoxYes}" FontSize="20" FontWeight="Bold" Margin="14,0,17,0"/>
