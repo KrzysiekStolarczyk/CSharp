@@ -10,34 +10,24 @@ namespace JanuszowyExpert.ViewModels
     public class MainViewModel : BaseClassViewmodel//: INotifyPropertyChanged
     {
 
-        //public Questions Questions
-        public Questions Questions { get; set; }
-        //public Questions checkBoxYes { get; set; }
-        public Questions checkBoxNo { get; set; }
-        public Questions ActiveButton { get; set; }
-
-
-
         public Cars car = new Cars();
+
+        int a = 1;
+
 
         public MainViewModel()
         {
             car.AddCarsToList();
             //MessageBox.Show(car.ListOfCars.Count.ToString());
 
-            Questions = new Questions();
-            //Questions.QuestionContext = "cuka";
-            //Questions.AskQuestions();
-            //MessageBox.Show(_bountNumber.ToString());
-
-            Questions.ActiveButton = (_bountNumber == true) ? false: true;
+            //Questions.ActiveButton = (_bountNumber == true) ? false: true;
 
             AskQuestions();
         }
 
 
         private bool _bountNumber;
-        public bool checkBoxYes
+        public bool CheckBoxYes
         {
             get { return _bountNumber; }
             set
@@ -46,26 +36,40 @@ namespace JanuszowyExpert.ViewModels
                 {
                     _bountNumber = value;
                     OnPropertyChanged();
-                    //MessageBox.Show(_bountNumber.ToString());
-                    AskQuestions2();
+                }
+            }
+        }
+
+        private string _question;
+        public string QuestionContext
+        {
+            get { return _question; }
+            set
+            {
+                if (_question != value)
+                {
+                    _question = value;
+                    OnPropertyChanged();
                 }
             }
         }
 
 
- 
 
         public void AskQuestions()
         {
+            if (a == 1)
+            {
 
-            Questions.QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
+            }
+            QuestionContext = $"{DateTime.Now.ToString()}Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
 
         }
         public void AskQuestions2()
         {
 
-            Questions.QuestionContext = "Nie chuju?";
-
+            QuestionContext = "Nie chuju?";
+            //_question = "Nie chuju?";
         }
 
 
