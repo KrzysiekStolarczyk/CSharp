@@ -10,22 +10,25 @@ namespace JanuszowyExpert.ViewModels
 {
     public class BaseClassViewmodel : INotifyPropertyChanged
     {
-        private int _bountNumber;
-        public int BoundNumber
-        {
-            get { return _bountNumber; }
-            set
-            {
-                if (_bountNumber != value)
-                {
-                    _bountNumber = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        public BaseClassViewmodel()
-        {
-        }
+        //private int _bountNumber;
+        //public int BoundNumber
+        //{
+        //    get { return _bountNumber; }
+        //    set
+        //    {
+        //        if (_bountNumber != value)
+        //        {
+        //            _bountNumber = value;
+        //            OnPropertyChanged();
+        //        }
+        //    }
+        //}
+        //public BaseClassViewmodel()
+        //{
+        //}
+
+        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -9,7 +9,7 @@ namespace JanuszowyExpert.Models
         public string QuestionContext { get; set; }
         public bool checkBoxYes { get; set; }
         public bool checkBoxNo { get; set; }
-
+        public bool ActiveButton { get; set; }
         //public DelegateCommand NextQuestion { get; set; }
         //BaseClassViewmodel test = new BaseClassViewmodel();
 
@@ -21,10 +21,10 @@ namespace JanuszowyExpert.Models
        
 
 
-        public Questions(string QuestionContext1)
-        {
-            QuestionContext = QuestionContext1;
-        }
+        //public Questions(string QuestionContext1)
+        //{
+        //    QuestionContext = QuestionContext1;
+        //}
 
         //public Questions()
         //{
@@ -37,24 +37,6 @@ namespace JanuszowyExpert.Models
         {
             return true;
         }
-        private void AskQuestions2(object obj)
-        {
-
-            QuestionContext = "Czy samochód twoich marzeń?";
-
-        }
-        public object test1()
-        {
-
-            return true;
-
-        }
-
-        public void AskQuestions()
-        {
-
-            QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
-
-        }
+       
     }
 }

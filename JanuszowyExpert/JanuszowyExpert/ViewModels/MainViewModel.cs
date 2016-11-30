@@ -7,13 +7,16 @@ using System.Runtime.CompilerServices;
 
 namespace JanuszowyExpert.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : BaseClassViewmodel//: INotifyPropertyChanged
     {
 
         //public Questions Questions
         public Questions Questions { get; set; }
         //public Questions checkBoxYes { get; set; }
         public Questions checkBoxNo { get; set; }
+        public Questions ActiveButton { get; set; }
+
+
 
         public Cars car = new Cars();
 
@@ -25,14 +28,16 @@ namespace JanuszowyExpert.ViewModels
             Questions = new Questions();
             //Questions.QuestionContext = "cuka";
             //Questions.AskQuestions();
+            //MessageBox.Show(_bountNumber.ToString());
 
-            
+            Questions.ActiveButton = (_bountNumber == true) ? false: true;
 
+            AskQuestions();
         }
 
 
-        private int _bountNumber;
-        public int checkBoxYes
+        private bool _bountNumber;
+        public bool checkBoxYes
         {
             get { return _bountNumber; }
             set
@@ -41,22 +46,27 @@ namespace JanuszowyExpert.ViewModels
                 {
                     _bountNumber = value;
                     OnPropertyChanged();
-                    MessageBox.Show(_bountNumber.ToString());
+                    //MessageBox.Show(_bountNumber.ToString());
+                    AskQuestions2();
                 }
             }
         }
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
+ 
 
-        protected void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        public void AskQuestions()
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
 
+            Questions.QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
+
+        }
+        public void AskQuestions2()
+        {
+
+            Questions.QuestionContext = "Nie chuju?";
+
+        }
 
 
     }
