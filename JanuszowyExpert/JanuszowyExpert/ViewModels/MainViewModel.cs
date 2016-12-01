@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Windows.Controls;
 using System.Xml.Linq;
+using System.Collections.Generic;
 
 namespace JanuszowyExpert.ViewModels
 {
@@ -15,22 +16,73 @@ namespace JanuszowyExpert.ViewModels
 
         public DelegateCommand Next { get; set; }
         public Cars car = new Cars();
-
+        public List<AllQuestions> ListQuest = new List<AllQuestions>();
+        public List<Cars> ListCars= new List<Cars>();
+        public int NrQues = 1;
+        public bool YourChoice;
 
         public MainViewModel()
         {
-            car.AddCarsToList();
+
+            Cars.AddCarsToList(ListCars);
             AskQuestions();
-            Next = new DelegateCommand(NextQuestion);
+            Next = new DelegateCommand(ButtonQlik);
+            AllQuestions.AddtoListQuestions(ListQuest);
         }
 
 
-        private void NextQuestion(object parameter)
+        private void ButtonQlik(object parameter)
         {
+            AllQuestions qqqqq = NextQuest(NrQues);
 
-            QuestionContext = "Pytanie 2";
-            ActiveButton = false;
+
+            QuestionContext = qqqqq.ContextQuestion;
+            if(_currentSelectionY )
+            {
+                NrQues= qqqqq.AnswerTrue;
+                YourChoice = true;
+            }
+            else if(_currentSelectionN)
+            {
+                NrQues = qqqqq.AnswerFalse;
+                YourChoice = false;
+            }
+            RemoveFromListCars(NrQues, YourChoice);
+            
+                ActiveButton = false;
         }
+
+        public void RemoveFromListCars(int id, bool choice)
+        {
+            if(id==1 && choice)
+            {
+                foreach (Cars value in ListCars)
+                {
+                    if ("Coupe".Equals(value.Body) || "Hatchback".Equals(value.Body) || "Sedan".Equals(value.Body))
+                    {
+                        value.Status = false;
+                    }
+                        
+                }
+               
+            }
+        }
+
+        public AllQuestions NextQuest(int idQ)
+        {
+            foreach (AllQuestions value in ListQuest)
+            {
+                if (value.IdQuestion == idQ)
+                    return value;
+            }
+            return null;
+        }
+
+
+
+
+
+
         private void CheckIsCheckedAnswer()
         {
 

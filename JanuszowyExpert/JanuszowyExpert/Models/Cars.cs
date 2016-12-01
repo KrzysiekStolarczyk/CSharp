@@ -8,20 +8,20 @@ namespace JanuszowyExpert.Models
 {
     public class Cars
     {
-        public List<Cars> ListOfCars = new List<Cars>();
 
-        private string Country;
-        private string Mark;
-        private string Model;
-        private string Series;
-        private string Body;
-        private string FuelType;
-        private int YearOfproduction;
-        private int Miliage;
-        private int EngineCapacity;
-        private int Power;
-        private string LocationPhotos;
-        private bool Status;
+
+        public string Country;
+        public string Mark;
+        public string Model;
+        public string Series;
+        public string Body;
+        public string FuelType;
+        public int YearOfproduction;
+        public int Miliage;
+        public int EngineCapacity;
+        public int Power;
+        public string LocationPhotos;
+        public bool Status;
 
         private Cars(string country, string mark, string model, string series, string body, string fueltype, int yearofproduction, int miliage, int enginecapacity, int power, string locationphotos, bool status)
         {
@@ -40,7 +40,7 @@ namespace JanuszowyExpert.Models
             
         }
 
-        public void AddCarsToList()
+        public static void AddCarsToList(List<Cars> ListOfCars)
         {
 
             ListOfCars.Add(new Cars("Niemcy", "AUDI", "A4", "B8", "Sedan", "Benzyna", 2009, 173000, 2500, 250, "Audi A4 B8 Sedan.jpg", true));

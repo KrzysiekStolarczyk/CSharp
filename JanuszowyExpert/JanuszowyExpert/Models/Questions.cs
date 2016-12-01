@@ -14,7 +14,8 @@ namespace JanuszowyExpert.Models
         public bool CurentSelectionN { get; set; }
         public bool CurentSelection { get; set; }
 
-      
+       
+
         //public DelegateCommand NextQuestion { get; set; }
         //BaseClassViewmodel test = new BaseClassViewmodel();
 
@@ -24,7 +25,10 @@ namespace JanuszowyExpert.Models
 
         }
 
+        public void testPyt()
+        {
 
+        }
 
         //public Questions(string QuestionContext1)
         //{
@@ -38,14 +42,14 @@ namespace JanuszowyExpert.Models
         //}
 
 
-        private bool Czy(object obj)
-        {
-            return true;
-        }
+        //private bool Czy(object obj)
+        //{
+        //    return true;
+        //}
 
-        public void Method()
-        {
-            throw new System.NotImplementedException();
-        }
+        //public void Method()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
     }
 }
