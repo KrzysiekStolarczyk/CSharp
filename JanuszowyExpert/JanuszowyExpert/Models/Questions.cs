@@ -12,6 +12,9 @@ namespace JanuszowyExpert.Models
         public bool ActiveButton { get; set; }
         public bool CurentSelectionY { get; set; }
         public bool CurentSelectionN { get; set; }
+        public bool CurentSelection { get; set; }
+
+      
         //public DelegateCommand NextQuestion { get; set; }
         //BaseClassViewmodel test = new BaseClassViewmodel();
 
@@ -40,5 +43,9 @@ namespace JanuszowyExpert.Models
             return true;
         }
 
+        public void Method()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -5,44 +5,49 @@ using System.Threading;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using System.Windows.Controls;
+using System.Xml.Linq;
 
 namespace JanuszowyExpert.ViewModels
 {
     public class MainViewModel : BaseClassViewmodel
     {
 
-        public ICommand MyComand { get; set; }
-
+        public DelegateCommand Next { get; set; }
         public Cars car = new Cars();
-        //public Questions ques= new  Questions();
+
 
         public MainViewModel()
         {
             car.AddCarsToList();
-            //ques.ActiveButton = false;
             AskQuestions();
-            MyComand = new Command(ExecuteMethod, canExecuteMethod);
+            Next = new DelegateCommand(NextQuestion);
         }
 
-        private bool canExecuteMethod(object parameter)
+
+        private void NextQuestion(object parameter)
         {
-            return true;
+
+            QuestionContext = "Pytanie 2";
+            ActiveButton = false;
         }
-
-        private void ExecuteMethod(object parameter)
+        private void CheckIsCheckedAnswer()
         {
-           //MessageBox.Show("No code behind");
 
-            if (_currentSelectionY == false & _currentSelectionN == false)
+            if (_currentSelectionY == false && _currentSelectionN == false)
             {
-                QuestionContext = "Zaznacz odpowiedz ...";
+                ActiveButton = false;
             }
+            else if (_currentSelectionY == true)
+            {
+                ActiveButton = true;
+            }
+            else
+            {
+                ActiveButton = true;
+            }
+
         }
-
-
-
-
-
 
 
         private string _question;
@@ -59,6 +64,7 @@ namespace JanuszowyExpert.ViewModels
             }
         }
 
+
         private bool _currentSelectionY;
         public bool CurentSelectionY
         {
@@ -69,9 +75,26 @@ namespace JanuszowyExpert.ViewModels
                 {
                     _currentSelectionY = value;
                     OnPropertyChanged();
+                    CheckIsCheckedAnswer();
                 }
             }
         }
+
+
+        private bool _activeButton;
+        public bool ActiveButton
+        {
+            get { return _activeButton; }
+            set
+            {
+                if (_activeButton != value)
+                {
+                    _activeButton = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
 
         private bool _currentSelectionN;
         public bool CurentSelectionN
@@ -83,6 +106,7 @@ namespace JanuszowyExpert.ViewModels
                 {
                     _currentSelectionN = value;
                     OnPropertyChanged();
+                    CheckIsCheckedAnswer();
                 }
             }
         }
@@ -90,24 +114,11 @@ namespace JanuszowyExpert.ViewModels
         public void AskQuestions()
         {
 
-            //QuestionContext = $"{DateTime.Now.ToString()}Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
             QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
 
         }
-        public void Test()
-        {
-
-            //QuestionContext = "Nie chuju?";
-            //_question = "Nie chuju?";
-
-            MessageBox.Show("Test");
-        }
-
 
     }
-
-
-
 
 }
 

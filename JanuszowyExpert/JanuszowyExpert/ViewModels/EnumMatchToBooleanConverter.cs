@@ -17,8 +17,7 @@ namespace JanuszowyExpert.ViewModels
 
             string checkValue = value.ToString();
             string targetValue = parameter.ToString();
-            return checkValue.Equals(targetValue,
-                     StringComparison.InvariantCultureIgnoreCase);
+            return checkValue.Equals(targetValue,StringComparison.InvariantCultureIgnoreCase);
         }
 
         public object ConvertBack(object value, Type targetType,object parameter, CultureInfo culture)
@@ -29,7 +28,13 @@ namespace JanuszowyExpert.ViewModels
             bool useValue = (bool)value;
             string targetValue = parameter.ToString();
             if (useValue)
-                return Enum.Parse(targetType, targetValue);
+            {
+                return ("yes").Equals(targetValue) ? true : false;
+     
+                //return targetValue;
+            }
+                
+            //return Enum.Parse(targetType, targetValue);
 
             return null;
         }

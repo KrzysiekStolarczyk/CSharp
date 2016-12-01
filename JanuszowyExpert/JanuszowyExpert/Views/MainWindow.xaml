@@ -15,9 +15,12 @@
     </Window.DataContext>
    
     <Grid Background="Green" Margin="0,0,-65,-21">
-        <Grid.Resources>
+        <!--<Grid.Resources>
             <ViewModels:MainViewModel x:Key="wm"/>
-            <!--<Models: x:Key="wm"/>-->
+            --><!--<Models: x:Key="wm"/>--><!--
+        </Grid.Resources>-->
+        <Grid.Resources>
+            <ViewModels:EnumMatchToBooleanConverter x:Key="enumConverter"/>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="37*"/>
@@ -25,11 +28,15 @@
         </Grid.RowDefinitions>
         <TextBlock x:Name="textBlockQuestion" HorizontalAlignment="Left" Margin="10,56.277,0,0" TextWrapping="Wrap" Text="{Binding QuestionContext, Mode=TwoWay}" VerticalAlignment="Top" Height="41" Width="659" FontSize="20" Grid.Row="1"/>
         <TextBlock x:Name="textBlockTitle" Margin="10,18,10,0" TextWrapping="Wrap" Text="Witamy w systemie ekspertowym- JANUSZ DORADCA" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" Grid.RowSpan="2"/>
-        <Button x:Name="buttonNextQuestion" Content="Następne pytanie" HorizontalAlignment="Left" Margin="97,125,0,0" VerticalAlignment="Top" Width="158" Height="43" Grid.Row="1" Command="{Binding MyComand,Source={StaticResource wm} }" />
+        <!--<Button x:Name="buttonNextQuestion" Content="Następne pytanie" HorizontalAlignment="Left" Margin="97,125,0,0" VerticalAlignment="Top" Width="158" Height="43" Grid.Row="1" Command="{Binding MyComand,Source={StaticResource wm} }" />-->
+        <Button x:Name="buttonNextQuestion" Content="Następne pytanie" HorizontalAlignment="Left" Margin="97,125,0,0" VerticalAlignment="Top" Width="158" Height="43" Grid.Row="1" Command="{Binding Next}" IsEnabled="{Binding ActiveButton}"  />
 
         <StackPanel HorizontalAlignment="Left" Height="51" Margin="10,117,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82">
             <RadioButton GroupName="yn" x:Name="radioButtonYes" Content="Tak"  IsChecked="{Binding Path=CurentSelectionY, Mode=TwoWay}" FontSize="20" FontWeight="Bold" Margin="14,0,17,0"/>
             <RadioButton GroupName="yn" x:Name="radioButtonNo" Content="Nie"   IsChecked="{Binding Path=CurentSelectionN, Mode=TwoWay}" FontSize="20" FontWeight="Bold" Margin="14,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="51"/>
+            <!--<RadioButton GroupName="yn" x:Name="radioButtonYes" Content="Tak"  IsChecked="{Binding CurentSelectionY, Mode=TwoWay, Converter={StaticResource enumConverter}, ConverterParameter= yes}" FontSize="20" FontWeight="Bold" Margin="14,0,17,0"/>
+            <RadioButton GroupName="yn" x:Name="radioButtonNo" Content="Nie"   IsChecked="{Binding CurentSelectionN, Mode=TwoWay, Converter={StaticResource enumConverter}, ConverterParameter=no}" FontSize="20" FontWeight="Bold" Margin="14,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="51"/>-->
+
         </StackPanel>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="7" Margin="117,248,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="27"/>
     </Grid>
