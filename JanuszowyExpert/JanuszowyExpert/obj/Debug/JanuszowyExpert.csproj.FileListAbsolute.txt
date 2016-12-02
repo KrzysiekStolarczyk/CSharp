@@ -26,4 +26,3 @@ G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Debug\Views\MainWindow.ba
 G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.g.resources
 G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.Properties.Resources.resources
 G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.csproj.GenerateResource.Cache
-G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Debug\JanuszowyExpert.csprojResolveAssemblyReference.cache

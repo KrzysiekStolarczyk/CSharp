@@ -30,6 +30,7 @@ namespace JanuszowyExpert.Models
 
         public static void AddtoListQuestions(List<AllQuestions> Questi)
         {
+            Questi.Add(new AllQuestions(0, "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń ? ", 1, 1));
             Questi.Add(new AllQuestions(1, "Czy chcesz samochód rodzinny(kombi,minivan,SUV) ? ", 3, 3));
             Questi.Add(new AllQuestions(2, "Czy chcesz samochód sportowy?", 1, 2));
             Questi.Add(new AllQuestions(3, "Czy chcesz samochód ekonomiczny?", 4, 4));

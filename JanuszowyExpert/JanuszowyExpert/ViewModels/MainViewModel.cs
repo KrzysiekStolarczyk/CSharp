@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Controls;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JanuszowyExpert.ViewModels
 {
@@ -17,9 +18,11 @@ namespace JanuszowyExpert.ViewModels
         public DelegateCommand Next { get; set; }
         public Cars car = new Cars();
         public List<AllQuestions> ListQuest = new List<AllQuestions>();
-        public List<Cars> ListCars= new List<Cars>();
-        public int NrQues = 1;
+        public List<Cars> ListCars = new List<Cars>();
+        public int NrQues = 0;
         public bool YourChoice;
+        public int BeforeNrQue;
+        public AllQuestions ask;
 
         public MainViewModel()
         {
@@ -28,55 +31,88 @@ namespace JanuszowyExpert.ViewModels
             AskQuestions();
             Next = new DelegateCommand(ButtonQlik);
             AllQuestions.AddtoListQuestions(ListQuest);
+            ask = NextQuest(NrQues);
+            QuestionContext = ask.ContextQuestion;
+
+
         }
 
 
         private void ButtonQlik(object parameter)
         {
-            AllQuestions qqqqq = NextQuest(NrQues);
 
 
-            QuestionContext = qqqqq.ContextQuestion;
-            if(_currentSelectionY )
+
+
+            BeforeNrQue = NrQues;
+
+            if (_currentSelectionY)
             {
-                NrQues= qqqqq.AnswerTrue;
+                NrQues = ask.AnswerTrue;
                 YourChoice = true;
+
             }
-            else if(_currentSelectionN)
+            else if (_currentSelectionN)
             {
-                NrQues = qqqqq.AnswerFalse;
+                NrQues = ask.AnswerFalse;
                 YourChoice = false;
+
             }
-            RemoveFromListCars(NrQues, YourChoice);
-            
-                ActiveButton = false;
+
+            RemoveFromListCars(BeforeNrQue, YourChoice);
+
+            if (NrQues == 10)
+            {
+                QuestionContext = ListCars.Where(x => x.Status == true).ToList().Count.ToString();
+            }
+            else
+            {
+                ask = NextQuest(NrQues);
+
+
+                QuestionContext = ask.ContextQuestion;
+            }
+
+            ActiveButton = false;
+
+
         }
+
+
+
 
         public void RemoveFromListCars(int id, bool choice)
         {
-            if(id==1 && choice)
+            if (id == 1 && choice)
             {
-                foreach (Cars value in ListCars)
-                {
-                    if ("Coupe".Equals(value.Body) || "Hatchback".Equals(value.Body) || "Sedan".Equals(value.Body))
-                    {
-                        value.Status = false;
-                    }
-                        
-                }
-               
+                var ids = new[] { "Coupe", "Hatchback", "Sedan" };
+                ListCars.Where(x => ids.Contains(x.Body) || x.Power >= 200).ToList().ForEach(s => s.Status = false);
             }
+            else if (id == 1 && choice==false)
+            {
+                var ids = new[] { "Kombi", "Minivan", "SUV" };
+                ListCars.Where(x => ids.Contains(x.Body) ).ToList().ForEach(s => s.Status = false);
+            }
+
         }
+
 
         public AllQuestions NextQuest(int idQ)
         {
-            foreach (AllQuestions value in ListQuest)
-            {
-                if (value.IdQuestion == idQ)
-                    return value;
-            }
-            return null;
+            return ListQuest.Find(x => x.IdQuestion == idQ);
+
+            //foreach (AllQuestions value in ListQuest)
+            //{
+            //    if (value.IdQuestion == idQ)
+            //        return value;
+            //}
+            //return null;
+
+
         }
+
+
+
 
 
 
@@ -115,6 +151,21 @@ namespace JanuszowyExpert.ViewModels
                 }
             }
         }
+
+        private string _ButtonContent;
+        public string ButtonContent
+        {
+            get { return _ButtonContent; }
+            set
+            {
+                if (_ButtonContent != value)
+                    _ButtonContent = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
 
 
         private bool _currentSelectionY;
@@ -166,7 +217,7 @@ namespace JanuszowyExpert.ViewModels
         public void AskQuestions()
         {
 
-            QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń?";
+            QuestionContext = "Czy chcesz aby Janusz pomógł Ci wybrać samochód twoich marzeń    ?";
 
         }
 
