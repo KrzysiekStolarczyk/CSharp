@@ -1,12 +1,5 @@
 ﻿using JanuszowyExpert.Models;
-using System;
 using System.Windows;
-using System.Threading;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
-using System.Windows.Controls;
-using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,6 +16,7 @@ namespace JanuszowyExpert.ViewModels
         public bool YourChoice;
         public int BeforeNrQue;
         public AllQuestions ask;
+        public int ile;
 
         public MainViewModel()
         {
@@ -33,15 +27,19 @@ namespace JanuszowyExpert.ViewModels
             AllQuestions.AddtoListQuestions(ListQuest);
             ask = NextQuest(NrQues);
             QuestionContext = ask.ContextQuestion;
-
+            ButtonContent = "Następne pytanie";
 
         }
 
 
         private void ButtonQlik(object parameter)
         {
+            if (ButtonContent == "Reset")
+            {
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
 
-
+            }
 
 
             BeforeNrQue = NrQues;
@@ -57,6 +55,7 @@ namespace JanuszowyExpert.ViewModels
                 NrQues = ask.AnswerFalse;
                 YourChoice = false;
 
+
             }
 
             RemoveFromListCars(BeforeNrQue, YourChoice);
@@ -64,6 +63,21 @@ namespace JanuszowyExpert.ViewModels
             if (NrQues == 10)
             {
                 QuestionContext = ListCars.Where(x => x.Status == true).ToList().Count.ToString();
+
+                if (ListCars.Where(x => x.Status == true).ToList().Count > 0)
+                {
+                    ButtonContent = "Reset";
+                    QuestionContext = ListCars.Where(x => x.Status == true).Select(x => "Twoje wymarzone auto to: " + x.Mark + " " + x.Model + " " + x.Series).FirstOrDefault();
+                    ImageLocation = ListCars.Where(x => x.Status == true).Select(x => "G:/Git/C# Projekty/JanuszowyExpert/JanuszowyExpert/Zdjecia/" + x.LocationPhotos).FirstOrDefault();
+
+                }
+                else
+                {
+                    ButtonContent = "Reset";
+                    QuestionContext = " Niestety Janusz nie ogarnął tematu...";
+                    ImageLocation = "G:/Git/C# Projekty/JanuszowyExpert/JanuszowyExpert/Zdjecia/brak.jpg";
+                }
+
             }
             else
             {
@@ -73,12 +87,19 @@ namespace JanuszowyExpert.ViewModels
                 QuestionContext = ask.ContextQuestion;
             }
 
-            ActiveButton = false;
 
+            CurentSelectionY = false;
+            CurentSelectionN = false;
 
+            if (ButtonContent == "Reset")
+            {
+                ActiveButton = true;
+            }
+            else
+            {
+                ActiveButton = false;
+            }
         }
-
-
 
 
         public void RemoveFromListCars(int id, bool choice)
@@ -86,13 +107,79 @@ namespace JanuszowyExpert.ViewModels
             if (id == 1 && choice)
             {
                 var ids = new[] { "Coupe", "Hatchback", "Sedan" };
-                ListCars.Where(x => ids.Contains(x.Body) || x.Power >= 200).ToList().ForEach(s => s.Status = false);
+                ListCars.Where(x => (ids.Contains(x.Body)) && x.Status).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
             }
-            else if (id == 1 && choice==false)
+            else if (id == 1 && choice == false)
             {
                 var ids = new[] { "Kombi", "Minivan", "SUV" };
-                ListCars.Where(x => ids.Contains(x.Body) ).ToList().ForEach(s => s.Status = false);
+                ListCars.Where(x => ids.Contains(x.Body) && x.Status).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
             }
+            else if (id == 3 && choice)
+            {
+                ListCars.Where(x => (x.EngineCapacity > 2500 && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+                //ListCars.OrderBy(p => p.EngineCapacity);
+            }
+            else if (id == 3 && choice == false)
+            {
+                ListCars.Where(x => (x.EngineCapacity <= 2500 && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+                //ListCars.OrderByDescending(p => p.EngineCapacity);
+
+            }
+            else if (id == 4 && choice)
+            {
+                ListCars.Where(x => (x.FuelType == "Diesel" && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 4 && choice == false)
+            {
+                ListCars.Where(x => (x.FuelType == "Benzyna" && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 5 && choice)
+            {
+                ListCars.Where(x => (x.YearOfproduction >= 2003 && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 6 && choice)
+            {
+                ListCars.Where(x => ((x.YearOfproduction < 2003 || x.YearOfproduction > 2011) && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 6 && choice == false)
+            {
+                ListCars.Where(x => (x.YearOfproduction < 2011 && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 7 && choice)
+            {
+                ListCars.Where(x => (x.Miliage > 150000 && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 7 && choice == false)
+            {
+                ListCars.Where(x => (x.Miliage <= 150000 && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 8 && choice)
+            {
+                ListCars.Where(x => (x.Country != "Niemcy" && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 9 && choice)
+            {
+                ListCars.Where(x => (x.Country != "Włochy" && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+            else if (id == 9 && choice == false)
+            {
+                ListCars.Where(x => ((x.Country == "Włochy" || x.Country == "Niemcy") && x.Status)).ToList().ForEach(s => s.Status = false);
+                ile = ListCars.Where(x => x.Status == true).ToList().Count;
+            }
+
 
         }
 
@@ -101,21 +188,7 @@ namespace JanuszowyExpert.ViewModels
         {
             return ListQuest.Find(x => x.IdQuestion == idQ);
 
-            //foreach (AllQuestions value in ListQuest)
-            //{
-            //    if (value.IdQuestion == idQ)
-            //        return value;
-            //}
-            //return null;
-
-
         }
-
-
-
-
-
-
 
 
 
@@ -135,6 +208,22 @@ namespace JanuszowyExpert.ViewModels
                 ActiveButton = true;
             }
 
+        }
+
+
+
+        private string _image;
+        public string ImageLocation
+        {
+            get { return _image; }
+            set
+            {
+                if (_image != value)
+                {
+                    _image = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
 
@@ -165,7 +254,19 @@ namespace JanuszowyExpert.ViewModels
         }
 
 
-
+        private string _visible;
+        public string VisibleElements
+        {
+            get { return _visible; }
+            set
+            {
+                if (_visible != value)
+                {
+                    _visible = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
 
         private bool _currentSelectionY;
