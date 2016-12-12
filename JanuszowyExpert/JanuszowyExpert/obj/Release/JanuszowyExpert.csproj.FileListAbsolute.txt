@@ -1,0 +1,15 @@
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\bin\Release\JanuszowyExpert.exe.config
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\bin\Release\JanuszowyExpert.exe
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\bin\Release\JanuszowyExpert.pdb
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\Views\MainWindow.g.cs
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\App.g.cs
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\GeneratedInternalTypeHelper.g.cs
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert_MarkupCompile.cache
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert_MarkupCompile.lref
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\Views\MainWindow.baml
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert.g.resources
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert.Properties.Resources.resources
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert.csproj.GenerateResource.Cache
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert.exe
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert.pdb
+G:\Git\C# Projekty\JanuszowyExpert\JanuszowyExpert\obj\Release\JanuszowyExpert.csprojResolveAssemblyReference.cache

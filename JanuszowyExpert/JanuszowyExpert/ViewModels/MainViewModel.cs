@@ -104,7 +104,7 @@ namespace JanuszowyExpert.ViewModels
 
         public void RemoveFromListCars(int id, bool choice)
         {
-            if (id == 1 && choice)
+            if (id == 1 && choice)//Czy chcesz samochód rodzinny(kombi,minivan,SUV)  odp: true
             {
                 var ids = new[] { "Coupe", "Hatchback", "Sedan" };
                 ListCars.Where(x => (ids.Contains(x.Body)) && x.Status).ToList().ForEach(s => s.Status = false);
