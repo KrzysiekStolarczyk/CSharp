@@ -1,0 +1,80 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:GeneticAlgorithm"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        x:Class="GeneticAlgorithm.MainWindow"
+        Title="MainWindow" MinWidth="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1074" Height="700" Visibility="Visible" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,172" Height="22" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="266*"/>
+            <ColumnDefinition Width="419*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" Content="Button" RenderTransformOrigin="-2.051,-4.715" Margin="0,-187,239,187" Click="button_Click" HorizontalAlignment="Right" Width="91"/>
+        <ListView x:Name="MojaLista" Height="258" Margin="16,-466,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left"  >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView x:Name="view1">
+
+                    <GridViewColumn  Width="80"  DisplayMemberBinding="{Binding NameSubject}" >
+                        <GridViewColumn.Header>
+                            <TextBlock Text="Osobnik" ToolTip="Nazwa osonbnika"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn  Width="80"  DisplayMemberBinding="{Binding RandomNumber}">
+                        <GridViewColumn.Header>
+                            <TextBlock Text="Fenotyp" ToolTip="Randomowa liczba"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="70" DisplayMemberBinding="{Binding RandomNumberAsBinary}" >
+                        <GridViewColumn.Header>
+                            <TextBlock Text="Chromosom" ToolTip="Wartość binarna"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn  Width="100" DisplayMemberBinding="{Binding FunctionResult}" >
+                        <GridViewColumn.Header>
+                            <TextBlock Text="Przystosowanie" ToolTip="ocena przystowowania- wynik z funkcji"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="75" DisplayMemberBinding="{Binding Percentage}">
+                        <GridViewColumn.Header>
+                            <TextBlock Text="Selekcja" ToolTip="Selekcja procentowa"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="65" DisplayMemberBinding="{Binding PartSum}"  >
+                        <GridViewColumn.Header>
+                        <TextBlock Text="PodSuma" ToolTip="Suma częściowa"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <chartingToolkit:PieSeries HorizontalAlignment="Left" Height="100" Margin="315,-66,0,-12" VerticalAlignment="Top"/>
+        <chartingToolkit:Chart  Name="PieChart1" Title="Selekcja chromosomów" DataContext="{Binding MyValue}" VerticalAlignment="Top" Margin="0,-466,183,0" Height="258" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Right" Width="366">
+            <chartingToolkit:PieSeries DependentValuePath="Value"  IndependentValuePath="Key" ItemsSource="{Binding}"  IsSelectionEnabled="True" />
+        </chartingToolkit:Chart>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Right"  Height="223" Margin="0,-148,423,-53" VerticalAlignment="Top" Width="453" RenderTransformOrigin="0.303,0.434" IsReadOnly="True" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Przegieg Selekcji:" FontSize="15" FontWeight="Bold" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="button1" Content="Cross&#xD;&#xA;Cross" Grid.Column="1" HorizontalAlignment="Left" Margin="135,-187,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="135,-129,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <TextBox x:Name="textBoxPrawdKrzyz" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="496,-411,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Prawdopodobieństwo &#xD;&#xA;krzyżowania:" Grid.Column="1" HorizontalAlignment="Left" Margin="496,-466,0,0" VerticalAlignment="Top" Width="120" Height="50" UseLayoutRounding="False" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalContentAlignment="Center"/>
+    </Grid>
+</Window>

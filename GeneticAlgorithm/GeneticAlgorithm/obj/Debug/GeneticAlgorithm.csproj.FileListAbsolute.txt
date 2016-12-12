@@ -1,0 +1,37 @@
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe.config
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csprojResolveAssemblyReference.cache
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\MainWindow.g.cs
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\App.g.cs
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.cache
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.lref
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.pdb
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\MainWindow.baml
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.g.resources
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.Properties.Resources.resources
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.GenerateResource.Cache
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.exe
+c:\users\kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.pdb
+C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\system.windows.controls.datavisualization.toolkit.dll
+C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\WPFToolkit.dll
+C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\system.windows.controls.datavisualization.toolkit.pdb
+C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\WPFToolkit.pdb
+C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe.config
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.exe
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.pdb
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.pdb
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\system.windows.controls.datavisualization.toolkit.dll
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\WPFToolkit.dll
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\system.windows.controls.datavisualization.toolkit.pdb
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\WPFToolkit.pdb
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csprojResolveAssemblyReference.cache
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\MainWindow.g.cs
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\App.g.cs
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.cache
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.lref
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\MainWindow.baml
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.g.resources
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.Properties.Resources.resources
+G:\Git\C# Projekty\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.GenerateResource.Cache
