@@ -16,3 +16,21 @@ C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithmWF\Genetic
 C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\Kuczma\documents\visual studio 2015\Projects\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wpf.xml
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\GeneticAlgorithmWF.exe.config
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.exe
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.pdb
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\GeneticAlgorithmWF.exe
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\GeneticAlgorithmWF.pdb
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\Livecharts.dll
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.WinForms.dll
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wpf.dll
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\Livecharts.pdb
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\Livecharts.xml
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.WinForms.pdb
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.WinForms.xml
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wpf.pdb
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wpf.xml
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.csprojResolveAssemblyReference.cache
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.Form1.resources
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.Properties.Resources.resources
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.csproj.GenerateResource.Cache

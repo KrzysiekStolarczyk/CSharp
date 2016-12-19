@@ -24,8 +24,8 @@ namespace GeneticAlgorithmWF
         RandomNumber RandomNumberMain;
         DataVariablesToList header;
 
-        public double prawdoKrzyzowania = 0.75;
-        public double parametrMutacji = 0.02;
+        public double prawdoKrzyzowania;
+        public double parametrMutacji;
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +37,9 @@ namespace GeneticAlgorithmWF
             Krzyzowanie = new Crossover();
             header = new DataVariablesToList(0.75);
             LoadList();
+            button1.Enabled = false;
+            buttonKrzyzowanie.Enabled = false;
+            
         }
 
 
@@ -86,7 +89,7 @@ namespace GeneticAlgorithmWF
                 SumPercent = SumPercent + asPercentOneRow;// suma częsciowa procentów
                 item.PartSum = string.Format("{0:P2}.", SumPercent, 4); // aktualizacja Podsumy
 
-                
+
                 MyValue.Add(item.NameSubject, asPercentOneRow);
             }
 
@@ -116,6 +119,9 @@ namespace GeneticAlgorithmWF
         private void buttonSelekcja_Click(object sender, EventArgs e)
         {
             Selection2();
+            buttonSelekcja.Enabled = false;
+            buttonKrzyzowanie.Enabled = true;
+            getParameters();
         }
 
 
@@ -124,7 +130,7 @@ namespace GeneticAlgorithmWF
         public void Selection2()// selekcja 8 osobników
         {
             int randomNumber;
-            string info = "\nPo przeprowadzamy selekcję osobników za pomocą koła ruletki zostały wylosowane osobniki: ";
+            string info = "\nPo przeprowadzamy selekcję osobników za pomocą koła ruletki zostały wylosowane osobniki: \n";
             double SumPartFromList;
             int ListCount;
             int numberOfPairr;
@@ -138,20 +144,28 @@ namespace GeneticAlgorithmWF
                     id += 1;
                     SumPartFromList = SumPartFromList + item.PercentageAsDouble;
                     if (SumPartFromList >= randomNumber)
-                    {                      
-                        richTextBox1.Text+=richTextBox1.Text= "Dla liczby " + randomNumber + " wybrano " + item.NameSubject + " ,ponieważ " + String.Format("{0:N2}", SumPartFromList) + " >= " + randomNumber+"\n";
-
-                        info = info + ", " + item.NameSubject;
+                    {
+                        richTextBox1.Text += richTextBox1.Text = "Dla liczby " + randomNumber + " wybrano " + item.NameSubject + " ,ponieważ " + String.Format("{0:N2}", SumPartFromList) + " >= " + randomNumber + "\n";
                         ListCount = ParyOsobnikow.Count;
+
                         numberOfPairr = ListCount <= 1 ? 1 : ListCount <= 3 ? 2 : ListCount <= 5 ? 3 : 4;
 
-                        ParyOsobnikow.Add(new Crossover(ListCount + 1, item.NameSubject, item.RandomNumberAsBinary, numberOfPairr,item.RandomNumber));
+                        ParyOsobnikow.Add(new Crossover(ListCount + 1, item.NameSubject, item.RandomNumberAsBinary, numberOfPairr, item.RandomNumber));
+
+                        if (ParyOsobnikow.Count % 2 == 1)
+                        {
+                            info = info + "Para nr " + numberOfPairr + " " + item.NameSubject + ", ";
+                        }
+                        else
+                        {
+                            info = info + item.NameSubject + "\n";
+                        }
                         break;
                     }
                 }
             }
 
-            richTextBox1.Text += info;
+            richTextBox1.Text += info + "\n";
 
             //Krzyzowanie.AddListToTable(ParyOsobnikow, RandomNumberMain);
         }
@@ -160,16 +174,21 @@ namespace GeneticAlgorithmWF
         public void PropabilityCrossover(double propabilityParam)// prawdopodobieństwo krzyżowania, ustawia true lub folse dla danej pary
         {
             double randomNumber;
-
+            richTextBox1.Text += "Sprawdzamy prawdobodobieństwo krzyżowania dla parametru krzyżowania (PK) o wartości " + propabilityParam + "\n";
             for (int i = 0; i < 4; i++)
             {
                 randomNumber = (double)RandomNumberMain.GetRandomNumber(0, 100) / 100;
                 if (randomNumber < propabilityParam)
                 {
                     ParyOsobnikow.Where(p => p.NumberOfPar == i + 1).ToList().ForEach(p => p.PropabilityCross = true);
+                    richTextBox1.Text += "Wylosowano liczbę " + randomNumber + " która jest mniejsza od PK, więc para numer " + (i + 1) + " podlega krzyżowaniu.\n";
+                }
+                else
+                {
+                    richTextBox1.Text += "Wylosowano liczbę " + randomNumber + " która nie jest mniejsza od PK, więc para " + (i + 1) + " nie podlega krzyżowaniu.\n";
                 }
             }
-            
+
         }
 
 
@@ -183,7 +202,7 @@ namespace GeneticAlgorithmWF
                 randomNumber = RandomNumberMain.GetRandomNumber(1, 7);
                 ParyOsobnikow.Where(p => p.NumberOfPar == i + 1 && p.PropabilityCross).ToList().ForEach(p => p.Locus = randomNumber);
             }
-            
+
         }
 
         public void PrzeksztalceniePoLocus()
@@ -209,7 +228,7 @@ namespace GeneticAlgorithmWF
                         chromosom2p = item.RandomNumberAsBinary.Substring(0, item.Locus);
                         chromosom2k = item.RandomNumberAsBinary.Substring(item.Locus);
 
-                        ParyOsobnikow.Where(p => p.IdSubject == idSubject - 1).ToList().ForEach(p => { p.RandomNumberAsBinary = chromosom1p + chromosom2k; p.NewFenotyp = Convert.ToInt32(chromosom1p + chromosom2k, 2) ; });
+                        ParyOsobnikow.Where(p => p.IdSubject == idSubject - 1).ToList().ForEach(p => { p.RandomNumberAsBinary = chromosom1p + chromosom2k; p.NewFenotyp = Convert.ToInt32(chromosom1p + chromosom2k, 2); });
                         ParyOsobnikow.Where(p => p.IdSubject == idSubject).ToList().ForEach(p => { p.RandomNumberAsBinary = chromosom2p + chromosom1k; p.NewFenotyp = Convert.ToInt32(chromosom2p + chromosom1k, 2); });
 
                     }
@@ -217,7 +236,7 @@ namespace GeneticAlgorithmWF
 
             }
 
-            
+
         }
 
         public void PrawdopodobienstwoMutacji()
@@ -255,25 +274,51 @@ namespace GeneticAlgorithmWF
             WyznacznieLocus();
             PrzeksztalceniePoLocus();
             PrawdopodobienstwoMutacji();
+            buttonKrzyzowanie.Enabled = false;
+            button1.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= ParyOsobnikow;
+            dataGridView1.DataSource = ParyOsobnikow;
             Settings.UstawGridPoMutacji(dataGridView1);
+            button1.Enabled = false;
+            buttonSelekcja.Enabled = true;
+            ShowAxis();
         }
 
-        //private void button2_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string test = "0001101";
-        //    MessageBox.Show(test.Substring(3, 1));
-        //    string test2;
-        //    int locus = 2;
-        //    test2 = test.Substring(0, locus) + test.Substring(locus).Replace("0", "2").Replace("1", "0").Replace("2", "1");
+        public void ShowAxis()
+        {
+            chartAxis.Series[0].Points.Clear();
+            //chart1.Series[0].ChartType = SeriesChartType.Pie;
+            foreach (var tagname in ParyOsobnikow)
+            {
+                chartAxis.Series[0].Points.AddXY(tagname.NameSubject, tagname.NewFenotyp);
+            }
+
+        }
 
 
-        //}
+        public void getParameters()
+        {
+            if (!checkBoxKrz.Checked && textBoxKrz.Text != "")
+            {
+                prawdoKrzyzowania = double.Parse(textBoxKrz.Text);
+            }
+            else
+            {
+                prawdoKrzyzowania = 0.75;
 
+            }
+            if (!checkBoxMut.Checked && textBoxMut.Text != "")
+            {
+                parametrMutacji = double.Parse(textBoxMut.Text);
+            }
+            else
+            {
+                parametrMutacji = 0.15;
+            }
 
+        }
     }
 }

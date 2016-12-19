@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace GeneticAlgorithmWF
 {
+    
     public class Settings0bjects
     {
         public void UstawMainGrida(DataGridView grid)
