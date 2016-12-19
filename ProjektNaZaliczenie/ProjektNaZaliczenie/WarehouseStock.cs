@@ -17,7 +17,6 @@ namespace ProjektNaZaliczenie
         Stack<string> valueToSql = new Stack<string>();
 
         ConnectingString handlerToDataBase = new ConnectingString();
-        Settings setting = new Settings();
         SharedMethods sharedMethod = new SharedMethods();
 
         public WarehouseStock()
@@ -31,7 +30,7 @@ namespace ProjektNaZaliczenie
         {
             dataGridViewWarehouse.DataSource = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select * from DotNet.Dbo.V_WarehouseStock");
 
-            setting.SettingsDataGridWarehouseStock(dataGridViewWarehouse);
+            sharedMethod.SettingsDataGrid(dataGridViewWarehouse);
         }
 
         public void AddParametrsToStack(string sqlVariable, SqlDbType type, string value)
@@ -39,12 +38,10 @@ namespace ProjektNaZaliczenie
             zmienneInSql.Push(sqlVariable);
             sqlType.Push(type);
             valueToSql.Push(value);
-
         }
 
         public void UpdateWarehouseStock()
         {
-            
             stokQuantity = textBoxValueStock.Text;
             idProduct = dataGridViewWarehouse.SelectedRows[0].Cells[0].Value.ToString();
 
@@ -54,7 +51,7 @@ namespace ProjektNaZaliczenie
             AddParametrsToStack("@newStokQuantity", SqlDbType.Int, stokQuantity);
 
             int result = handlerToDataBase.localDbConnection.ExecuteQueryWithParametersStokScalar(procedureName, zmienneInSql, sqlType, valueToSql);
- 
+
             ShowDataOnTable();
             textBoxValueStock.Clear();
 
@@ -65,11 +62,12 @@ namespace ProjektNaZaliczenie
         private void buttonUpdateStock_Click(object sender, System.EventArgs e)
         {
 
-            if (sharedMethod.CheckBeAbleUpdate(textBoxValueStock, dataGridViewWarehouse)==1)
+
+            if (sharedMethod.CheckEnteredTextBox(textBoxValueStock) == 1 && sharedMethod.CheckSelectedRowOnGrid(dataGridViewWarehouse) == 1)
             {
                 UpdateWarehouseStock();
             }
-            
+
         }
 
         private void textBoxValueStock_KeyPress(object sender, KeyPressEventArgs e)

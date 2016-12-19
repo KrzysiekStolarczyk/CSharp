@@ -30,8 +30,8 @@
         {
             this.dataGridViewWarehouse = new System.Windows.Forms.DataGridView();
             this.groupBoxUpdateStock = new System.Windows.Forms.GroupBox();
-            this.textBoxValueStock = new System.Windows.Forms.TextBox();
             this.buttonUpdateStock = new System.Windows.Forms.Button();
+            this.textBoxValueStock = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWarehouse)).BeginInit();
             this.groupBoxUpdateStock.SuspendLayout();
@@ -62,14 +62,6 @@
             this.groupBoxUpdateStock.TabStop = false;
             this.groupBoxUpdateStock.Text = "Aktualizuj Stok";
             // 
-            // textBoxValueStock
-            // 
-            this.textBoxValueStock.Location = new System.Drawing.Point(6, 19);
-            this.textBoxValueStock.Name = "textBoxValueStock";
-            this.textBoxValueStock.Size = new System.Drawing.Size(100, 20);
-            this.textBoxValueStock.TabIndex = 0;
-            this.textBoxValueStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValueStock_KeyPress);
-            // 
             // buttonUpdateStock
             // 
             this.buttonUpdateStock.Location = new System.Drawing.Point(58, 57);
@@ -79,6 +71,14 @@
             this.buttonUpdateStock.Text = "Aktualizuj";
             this.buttonUpdateStock.UseVisualStyleBackColor = true;
             this.buttonUpdateStock.Click += new System.EventHandler(this.buttonUpdateStock_Click);
+            // 
+            // textBoxValueStock
+            // 
+            this.textBoxValueStock.Location = new System.Drawing.Point(6, 19);
+            this.textBoxValueStock.Name = "textBoxValueStock";
+            this.textBoxValueStock.Size = new System.Drawing.Size(127, 20);
+            this.textBoxValueStock.TabIndex = 0;
+            this.textBoxValueStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValueStock_KeyPress);
             // 
             // label1
             // 

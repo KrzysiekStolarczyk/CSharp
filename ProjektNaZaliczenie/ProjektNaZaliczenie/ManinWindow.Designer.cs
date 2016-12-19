@@ -52,6 +52,7 @@
             this.buttonClients.TabIndex = 1;
             this.buttonClients.Text = "Baza Klientów";
             this.buttonClients.UseVisualStyleBackColor = true;
+            this.buttonClients.Click += new System.EventHandler(this.buttonClients_Click);
             // 
             // buttonProducts
             // 
@@ -61,6 +62,7 @@
             this.buttonProducts.TabIndex = 2;
             this.buttonProducts.Text = "Baza Produktów";
             this.buttonProducts.UseVisualStyleBackColor = true;
+            this.buttonProducts.Click += new System.EventHandler(this.buttonProducts_Click);
             // 
             // buttonOrders
             // 

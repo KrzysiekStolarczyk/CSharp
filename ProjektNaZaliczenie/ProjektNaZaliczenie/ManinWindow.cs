@@ -22,5 +22,17 @@ namespace ProjektNaZaliczenie
             WarehouseStock formWarehouseStock = new WarehouseStock();
             formWarehouseStock.Show();
         }
+
+        private void buttonProducts_Click(object sender, EventArgs e)
+        {
+            Products formProducts =  new Products();
+            formProducts.Show();
+        }
+
+        private void buttonClients_Click(object sender, EventArgs e)
+        {
+            Clients formClients = new Clients();
+            formClients.Show();
+        }
     }
 }

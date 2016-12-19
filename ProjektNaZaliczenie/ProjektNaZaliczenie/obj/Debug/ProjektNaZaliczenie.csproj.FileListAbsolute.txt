@@ -8,3 +8,5 @@ c:\users\kuczma\documents\visual studio 2015\Projects\ProjektNaZaliczenie\Projek
 c:\users\kuczma\documents\visual studio 2015\Projects\ProjektNaZaliczenie\ProjektNaZaliczenie\obj\Debug\ProjektNaZaliczenie.WarehouseStock.resources
 c:\users\kuczma\documents\visual studio 2015\Projects\ProjektNaZaliczenie\ProjektNaZaliczenie\obj\Debug\ProjektNaZaliczenie.exe
 c:\users\kuczma\documents\visual studio 2015\Projects\ProjektNaZaliczenie\ProjektNaZaliczenie\obj\Debug\ProjektNaZaliczenie.pdb
+C:\Users\Kuczma\documents\visual studio 2015\Projects\ProjektNaZaliczenie\ProjektNaZaliczenie\obj\Debug\ProjektNaZaliczenie.Products.resources
+C:\Users\Kuczma\documents\visual studio 2015\Projects\ProjektNaZaliczenie\ProjektNaZaliczenie\obj\Debug\ProjektNaZaliczenie.Clients.resources
