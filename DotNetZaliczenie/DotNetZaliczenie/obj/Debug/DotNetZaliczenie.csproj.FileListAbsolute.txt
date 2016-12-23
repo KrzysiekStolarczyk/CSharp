@@ -1,0 +1,13 @@
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\bin\Debug\DotNetZaliczenie.exe.config
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\bin\Debug\DotNetZaliczenie.exe
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\bin\Debug\DotNetZaliczenie.pdb
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.Properties.Resources.resources
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.UserControlWarehouseStock.resources
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.csproj.GenerateResource.Cache
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.exe
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.pdb
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.UserControlProducts.resources
+c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.UserControlClients.resources
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.MainView.resources
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.UserControlOrders.resources
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.csprojResolveAssemblyReference.cache
