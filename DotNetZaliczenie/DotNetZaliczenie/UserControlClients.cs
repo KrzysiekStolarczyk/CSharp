@@ -27,6 +27,7 @@ namespace DotNetZaliczenie
         {
             InitializeComponent();
             ShowDataOnTable();
+            LoadAllComboBox();
         }
 
         public void ShowDataOnTable()
@@ -49,6 +50,22 @@ namespace DotNetZaliczenie
             zmienneInSql.Push(sqlVariable);
             sqlType.Push(type);
             valueToSql.Push(value);
+        }
+
+        public void LoadAllComboBox()
+        {
+            DataTable product = new DataTable();
+            product = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select distinct LastName from DotNet.Dbo.Client");
+            comboBoxLastName.Text = "Wybierz nazwisko";
+            foreach (DataRow id in product.Rows)
+            {
+                comboBoxLastName.Items.Add(id["LastName"]);
+            }
+        }
+
+        private void buttonfiltrName_Click(object sender, EventArgs e)
+        {
+            dataGridViewClients.DataSource = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select * from DotNet.dbo.Client where Lastname='" + comboBoxLastName.Text + "'");
         }
 
         public void AddNewClient()

@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>.\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -74,6 +83,12 @@
     <Compile Include="UserControlProducts.Designer.cs">
       <DependentUpon>UserControlProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCategory.Designer.cs">
+      <DependentUpon>UserControlCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlWarehouseStock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProducts.resx">
       <DependentUpon>UserControlProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlCategory.resx">
+      <DependentUpon>UserControlCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlWarehouseStock.resx">
       <DependentUpon>UserControlWarehouseStock.cs</DependentUpon>

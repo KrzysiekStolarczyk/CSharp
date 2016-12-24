@@ -11,3 +11,8 @@ c:\users\kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZal
 C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.MainView.resources
 C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.UserControlOrders.resources
 C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.csprojResolveAssemblyReference.cache
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\bin\Debug\itextsharp.dll
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\bin\Debug\itextsharp.xtra.dll
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\bin\Debug\itextsharp.xml
+C:\Users\Kuczma\documents\visual studio 2015\Projects\DotNetZaliczenie\DotNetZaliczenie\obj\Debug\DotNetZaliczenie.UserControlCategory.resources

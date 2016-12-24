@@ -28,6 +28,7 @@ namespace DotNetZaliczenie
         {
             InitializeComponent();
             ShowDataOnTable();
+            LoadAllComboBox();
         }
 
         public void AddParametrsToStack(string sqlVariable, SqlDbType type, string value)
@@ -35,31 +36,57 @@ namespace DotNetZaliczenie
             zmienneInSql.Push(sqlVariable);
             sqlType.Push(type);
             valueToSql.Push(value);
+
         }
 
         public void ShowDataOnTable()
         {
-            dataGridViewProducts.DataSource = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select * from DotNet.Dbo.Products");
+            dataGridViewProducts.DataSource = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select * from DotNet.dbo.VProducts");
 
             sharedMethod.SettingsDataGrid(dataGridViewProducts);
         }
 
+        public void LoadAllComboBox()
+        {
+            DataTable product = new DataTable();
+            product = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select distinct Producer from DotNet.Dbo.Products");
+            comboBoxName.Text = "Wybierz producenta";
+            foreach (DataRow id in product.Rows)
+            {
+                comboBoxName.Items.Add(id["Producer"]);
+            }
+
+            DataTable category = new DataTable();
+            product = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select CategoryName from DotNet.Dbo.Categories");
+            comboBoxCategory.Text = "Wybierz kategorię";
+
+            foreach (DataRow id in product.Rows)
+            {
+                comboBoxCategory.Items.Add(id["CategoryName"]);
+                comboBoxCategoryEdit.Items.Add(id["CategoryName"]);
+                comboBoxCategoryNew.Items.Add(id["CategoryName"]);
+            }
+        }
+
         public void AddNewProduct()
         {
-            productName =MTBProductNameNew.Text;
-            productPrice =  MTBProductPriceNew.Text;
+            productName = MTBProductNameNew.Text;
+            productPrice = MTBProductPriceNew.Text;
             producer = MTBProducerNew.Text;
             string procedureName = "[dbo].[AddProduct]";
 
-           AddParametrsToStack("@ProductName", SqlDbType.VarChar, productName);
-           AddParametrsToStack("@UnitPrice", SqlDbType.Money, productPrice);
-           AddParametrsToStack("@Producer", SqlDbType.VarChar, producer);
+            AddParametrsToStack("@ProductName", SqlDbType.VarChar, productName);
+            AddParametrsToStack("@UnitPrice", SqlDbType.Money, productPrice);
+            AddParametrsToStack("@Producer", SqlDbType.VarChar, producer);
+            AddParametrsToStack("@Category", SqlDbType.VarChar, comboBoxCategoryNew.Text);
 
             int result = handlerToDataBase.localDbConnection.ExecuteQueryWithParametersStokScalar(procedureName, zmienneInSql, sqlType, valueToSql);
 
             ShowDataOnTable();
             MTBProductNameNew.Clear();
             MTBProductPriceNew.Clear();
+            MTBProducerNew.Clear();
+            comboBoxCategoryNew.SelectedText= "Wybierz kategorię";
             MessageBox.Show(result == 1 ? "Operacja wykonana poprawnie." : "Błąd po stronie bazy.");
         }
 
@@ -81,19 +108,22 @@ namespace DotNetZaliczenie
             productName = MTBProductNameEdit.Text;
             productPrice = MTBProductPriceEdit.Text;
             idProduct = dataGridViewProducts.SelectedRows[0].Cells[0].Value.ToString();
-            producer = MTBProducerNew.Text;
+            producer = MTBProducerEdit.Text;
             string procedureName = "[dbo].[EditProduct]";
 
             AddParametrsToStack("@ProductName", SqlDbType.VarChar, productName);
             AddParametrsToStack("@UnitPrice", SqlDbType.Money, productPrice);
             AddParametrsToStack("@idProduct", SqlDbType.Int, idProduct);
             AddParametrsToStack("@Producer", SqlDbType.VarChar, producer);
+            AddParametrsToStack("@Category", SqlDbType.VarChar, comboBoxCategoryEdit.Text);
 
             int result = handlerToDataBase.localDbConnection.ExecuteQueryWithParametersStokScalar(procedureName, zmienneInSql, sqlType, valueToSql);
 
             ShowDataOnTable();
             MTBProductNameEdit.Clear();
             MTBProductPriceEdit.Clear();
+            MTBProducerEdit.Clear();
+            comboBoxCategoryEdit.SelectedText = "Wybierz kategorię";
             MessageBox.Show(result == 1 ? "Operacja wykonana poprawnie." : "Błąd po stronie bazy.");
         }
 
@@ -106,7 +136,7 @@ namespace DotNetZaliczenie
 
         private void buttonAddNewProduct_Click(object sender, EventArgs e)
         {
-             AddNewProduct();
+            AddNewProduct();
         }
 
         private void buttonEditProduct_Click(object sender, EventArgs e)
@@ -115,7 +145,7 @@ namespace DotNetZaliczenie
             if (sharedMethod.CheckSelectedRowOnGrid(dataGridViewProducts) == 1)
             {
                 EditProduct();
-            }              
+            }
         }
 
         private void buttonDeleteProduct_Click(object sender, EventArgs e)
@@ -130,5 +160,14 @@ namespace DotNetZaliczenie
             sharedMethod.MaskedTextBoxSetCursor(sender, e);
         }
 
+        private void buttonfiltrName_Click(object sender, EventArgs e)
+        {
+            dataGridViewProducts.DataSource = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select * from DotNet.dbo.VProducts where Producer='" + comboBoxName.Text + "'");
+        }
+
+        private void buttonFirltrCat_Click(object sender, EventArgs e)
+        {
+            dataGridViewProducts.DataSource = handlerToDataBase.localDbConnection.ExecuteSqlQuery("select * from DotNet.dbo.VProducts where CategoryName='" + comboBoxCategory.Text + "'");
+        }
     }
 }

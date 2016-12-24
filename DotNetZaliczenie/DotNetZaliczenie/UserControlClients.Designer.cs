@@ -65,10 +65,14 @@
             this.MTBLastNameNew = new System.Windows.Forms.MaskedTextBox();
             this.buttonAddNewClients = new System.Windows.Forms.Button();
             this.dataGridViewClients = new System.Windows.Forms.DataGridView();
+            this.groupBoxfilterLastName = new System.Windows.Forms.GroupBox();
+            this.buttonfiltrName = new System.Windows.Forms.Button();
+            this.comboBoxLastName = new System.Windows.Forms.ComboBox();
             this.groupBoxEditClients.SuspendLayout();
             this.groupBoxDeleteProduct.SuspendLayout();
             this.groupBoxAddClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).BeginInit();
+            this.groupBoxfilterLastName.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxEditClients
@@ -460,10 +464,40 @@
             this.dataGridViewClients.TabIndex = 6;
             this.dataGridViewClients.TabStop = false;
             // 
+            // groupBoxfilterLastName
+            // 
+            this.groupBoxfilterLastName.Controls.Add(this.buttonfiltrName);
+            this.groupBoxfilterLastName.Controls.Add(this.comboBoxLastName);
+            this.groupBoxfilterLastName.Location = new System.Drawing.Point(442, 396);
+            this.groupBoxfilterLastName.Name = "groupBoxfilterLastName";
+            this.groupBoxfilterLastName.Size = new System.Drawing.Size(187, 111);
+            this.groupBoxfilterLastName.TabIndex = 11;
+            this.groupBoxfilterLastName.TabStop = false;
+            this.groupBoxfilterLastName.Text = "Filtrowania po nazwisku";
+            // 
+            // buttonfiltrName
+            // 
+            this.buttonfiltrName.Location = new System.Drawing.Point(6, 64);
+            this.buttonfiltrName.Name = "buttonfiltrName";
+            this.buttonfiltrName.Size = new System.Drawing.Size(75, 23);
+            this.buttonfiltrName.TabIndex = 3;
+            this.buttonfiltrName.Text = "Filtruj";
+            this.buttonfiltrName.UseVisualStyleBackColor = true;
+            this.buttonfiltrName.Click += new System.EventHandler(this.buttonfiltrName_Click);
+            // 
+            // comboBoxLastName
+            // 
+            this.comboBoxLastName.FormattingEnabled = true;
+            this.comboBoxLastName.Location = new System.Drawing.Point(6, 18);
+            this.comboBoxLastName.Name = "comboBoxLastName";
+            this.comboBoxLastName.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLastName.TabIndex = 0;
+            // 
             // UserControlClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBoxfilterLastName);
             this.Controls.Add(this.groupBoxEditClients);
             this.Controls.Add(this.groupBoxDeleteProduct);
             this.Controls.Add(this.labelinfoClients);
@@ -478,6 +512,7 @@
             this.groupBoxAddClients.ResumeLayout(false);
             this.groupBoxAddClients.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).EndInit();
+            this.groupBoxfilterLastName.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,5 +557,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBoxfilterLastName;
+        private System.Windows.Forms.Button buttonfiltrName;
+        private System.Windows.Forms.ComboBox comboBoxLastName;
     }
 }

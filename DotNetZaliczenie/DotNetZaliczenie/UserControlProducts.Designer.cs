@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBoxEditProduct = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.MTBProducerEdit = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.MTBProductPriceEdit = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,24 +41,36 @@
             this.buttonDeleteProduct = new System.Windows.Forms.Button();
             this.labelinfoProducts = new System.Windows.Forms.Label();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.MTBProducerNew = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.MTBProductPriceNew = new System.Windows.Forms.MaskedTextBox();
             this.MTBProductNameNew = new System.Windows.Forms.MaskedTextBox();
             this.buttonAddNewProduct = new System.Windows.Forms.Button();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.MTBProducerEdit = new System.Windows.Forms.MaskedTextBox();
-            this.MTBProducerNew = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxCategoryNew = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxCategoryEdit = new System.Windows.Forms.ComboBox();
+            this.groupBoxfilterName = new System.Windows.Forms.GroupBox();
+            this.comboBoxName = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonFirltrCat = new System.Windows.Forms.Button();
+            this.buttonfiltrName = new System.Windows.Forms.Button();
             this.groupBoxEditProduct.SuspendLayout();
             this.groupBoxDeleteProduct.SuspendLayout();
             this.groupBoxAddProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            this.groupBoxfilterName.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxEditProduct
             // 
+            this.groupBoxEditProduct.Controls.Add(this.label9);
+            this.groupBoxEditProduct.Controls.Add(this.comboBoxCategoryEdit);
             this.groupBoxEditProduct.Controls.Add(this.label7);
             this.groupBoxEditProduct.Controls.Add(this.MTBProducerEdit);
             this.groupBoxEditProduct.Controls.Add(this.label4);
@@ -64,12 +78,31 @@
             this.groupBoxEditProduct.Controls.Add(this.label5);
             this.groupBoxEditProduct.Controls.Add(this.MTBProductNameEdit);
             this.groupBoxEditProduct.Controls.Add(this.buttonEditProduct);
-            this.groupBoxEditProduct.Location = new System.Drawing.Point(440, 294);
+            this.groupBoxEditProduct.Location = new System.Drawing.Point(522, 332);
             this.groupBoxEditProduct.Name = "groupBoxEditProduct";
-            this.groupBoxEditProduct.Size = new System.Drawing.Size(200, 140);
+            this.groupBoxEditProduct.Size = new System.Drawing.Size(200, 162);
             this.groupBoxEditProduct.TabIndex = 9;
             this.groupBoxEditProduct.TabStop = false;
             this.groupBoxEditProduct.Text = "Edytuj informacje o produkcie";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(128, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Producent";
+            // 
+            // MTBProducerEdit
+            // 
+            this.MTBProducerEdit.Location = new System.Drawing.Point(6, 71);
+            this.MTBProducerEdit.Mask = "?????????????";
+            this.MTBProducerEdit.Name = "MTBProducerEdit";
+            this.MTBProducerEdit.PromptChar = ' ';
+            this.MTBProducerEdit.Size = new System.Drawing.Size(116, 20);
+            this.MTBProducerEdit.TabIndex = 18;
+            this.MTBProducerEdit.Click += new System.EventHandler(this.textBoxValueStockValid);
             // 
             // label4
             // 
@@ -111,7 +144,7 @@
             // 
             // buttonEditProduct
             // 
-            this.buttonEditProduct.Location = new System.Drawing.Point(58, 97);
+            this.buttonEditProduct.Location = new System.Drawing.Point(54, 119);
             this.buttonEditProduct.Name = "buttonEditProduct";
             this.buttonEditProduct.Size = new System.Drawing.Size(75, 37);
             this.buttonEditProduct.TabIndex = 1;
@@ -123,7 +156,7 @@
             // 
             this.groupBoxDeleteProduct.Controls.Add(this.label1);
             this.groupBoxDeleteProduct.Controls.Add(this.buttonDeleteProduct);
-            this.groupBoxDeleteProduct.Location = new System.Drawing.Point(444, 194);
+            this.groupBoxDeleteProduct.Location = new System.Drawing.Point(522, 226);
             this.groupBoxDeleteProduct.Name = "groupBoxDeleteProduct";
             this.groupBoxDeleteProduct.Size = new System.Drawing.Size(200, 100);
             this.groupBoxDeleteProduct.TabIndex = 8;
@@ -133,7 +166,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Location = new System.Drawing.Point(11, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 13);
             this.label1.TabIndex = 2;
@@ -155,12 +188,14 @@
             this.labelinfoProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelinfoProducts.Location = new System.Drawing.Point(12, 9);
             this.labelinfoProducts.Name = "labelinfoProducts";
-            this.labelinfoProducts.Size = new System.Drawing.Size(199, 20);
+            this.labelinfoProducts.Size = new System.Drawing.Size(202, 20);
             this.labelinfoProducts.TabIndex = 7;
-            this.labelinfoProducts.Text = "Zarządzanie artykulami.";
+            this.labelinfoProducts.Text = "Zarządzanie produkatmi";
             // 
             // groupBoxAddProduct
             // 
+            this.groupBoxAddProduct.Controls.Add(this.label8);
+            this.groupBoxAddProduct.Controls.Add(this.comboBoxCategoryNew);
             this.groupBoxAddProduct.Controls.Add(this.label6);
             this.groupBoxAddProduct.Controls.Add(this.MTBProducerNew);
             this.groupBoxAddProduct.Controls.Add(this.label3);
@@ -168,12 +203,31 @@
             this.groupBoxAddProduct.Controls.Add(this.MTBProductPriceNew);
             this.groupBoxAddProduct.Controls.Add(this.MTBProductNameNew);
             this.groupBoxAddProduct.Controls.Add(this.buttonAddNewProduct);
-            this.groupBoxAddProduct.Location = new System.Drawing.Point(444, 50);
+            this.groupBoxAddProduct.Location = new System.Drawing.Point(522, 50);
             this.groupBoxAddProduct.Name = "groupBoxAddProduct";
-            this.groupBoxAddProduct.Size = new System.Drawing.Size(200, 143);
+            this.groupBoxAddProduct.Size = new System.Drawing.Size(200, 170);
             this.groupBoxAddProduct.TabIndex = 6;
             this.groupBoxAddProduct.TabStop = false;
             this.groupBoxAddProduct.Text = "Dodaj nowy produkt";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(128, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Producent";
+            // 
+            // MTBProducerNew
+            // 
+            this.MTBProducerNew.Location = new System.Drawing.Point(6, 75);
+            this.MTBProducerNew.Mask = "????????????????";
+            this.MTBProducerNew.Name = "MTBProducerNew";
+            this.MTBProducerNew.PromptChar = ' ';
+            this.MTBProducerNew.Size = new System.Drawing.Size(116, 20);
+            this.MTBProducerNew.TabIndex = 16;
+            this.MTBProducerNew.Click += new System.EventHandler(this.textBoxValueStockValid);
             // 
             // label3
             // 
@@ -215,7 +269,7 @@
             // 
             // buttonAddNewProduct
             // 
-            this.buttonAddNewProduct.Location = new System.Drawing.Point(54, 101);
+            this.buttonAddNewProduct.Location = new System.Drawing.Point(54, 127);
             this.buttonAddNewProduct.Name = "buttonAddNewProduct";
             this.buttonAddNewProduct.Size = new System.Drawing.Size(75, 37);
             this.buttonAddNewProduct.TabIndex = 1;
@@ -233,59 +287,115 @@
             this.dataGridViewProducts.MultiSelect = false;
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(423, 384);
+            this.dataGridViewProducts.Size = new System.Drawing.Size(497, 369);
             this.dataGridViewProducts.TabIndex = 5;
             this.dataGridViewProducts.TabStop = false;
             // 
-            // MTBProducerEdit
+            // comboBoxCategoryNew
             // 
-            this.MTBProducerEdit.Location = new System.Drawing.Point(6, 71);
-            this.MTBProducerEdit.Mask = "?????????????";
-            this.MTBProducerEdit.Name = "MTBProducerEdit";
-            this.MTBProducerEdit.PromptChar = ' ';
-            this.MTBProducerEdit.Size = new System.Drawing.Size(116, 20);
-            this.MTBProducerEdit.TabIndex = 18;
-            this.MTBProducerEdit.Click += new System.EventHandler(this.textBoxValueStockValid);
+            this.comboBoxCategoryNew.FormattingEnabled = true;
+            this.comboBoxCategoryNew.Location = new System.Drawing.Point(6, 102);
+            this.comboBoxCategoryNew.Name = "comboBoxCategoryNew";
+            this.comboBoxCategoryNew.Size = new System.Drawing.Size(116, 21);
+            this.comboBoxCategoryNew.TabIndex = 18;
             // 
-            // MTBProducerNew
+            // label8
             // 
-            this.MTBProducerNew.Location = new System.Drawing.Point(6, 75);
-            this.MTBProducerNew.Mask = "????????????????";
-            this.MTBProducerNew.Name = "MTBProducerNew";
-            this.MTBProducerNew.PromptChar = ' ';
-            this.MTBProducerNew.Size = new System.Drawing.Size(116, 20);
-            this.MTBProducerNew.TabIndex = 16;
-            this.MTBProducerNew.Click += new System.EventHandler(this.textBoxValueStockValid);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(128, 105);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Kategoria";
             // 
-            // label6
+            // label9
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(128, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Producent";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(128, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Kategoria";
             // 
-            // label7
+            // comboBoxCategoryEdit
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(128, 74);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Producent";
+            this.comboBoxCategoryEdit.FormattingEnabled = true;
+            this.comboBoxCategoryEdit.Location = new System.Drawing.Point(6, 97);
+            this.comboBoxCategoryEdit.Name = "comboBoxCategoryEdit";
+            this.comboBoxCategoryEdit.Size = new System.Drawing.Size(116, 21);
+            this.comboBoxCategoryEdit.TabIndex = 20;
+            // 
+            // groupBoxfilterName
+            // 
+            this.groupBoxfilterName.Controls.Add(this.buttonfiltrName);
+            this.groupBoxfilterName.Controls.Add(this.comboBoxName);
+            this.groupBoxfilterName.Location = new System.Drawing.Point(16, 433);
+            this.groupBoxfilterName.Name = "groupBoxfilterName";
+            this.groupBoxfilterName.Size = new System.Drawing.Size(249, 61);
+            this.groupBoxfilterName.TabIndex = 10;
+            this.groupBoxfilterName.TabStop = false;
+            this.groupBoxfilterName.Text = "Filtrowania po nazwie";
+            // 
+            // comboBoxName
+            // 
+            this.comboBoxName.FormattingEnabled = true;
+            this.comboBoxName.Location = new System.Drawing.Point(6, 18);
+            this.comboBoxName.Name = "comboBoxName";
+            this.comboBoxName.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxName.TabIndex = 0;
+            // 
+            // comboBoxCategory
+            // 
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(6, 19);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCategory.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonFirltrCat);
+            this.groupBox1.Controls.Add(this.comboBoxCategory);
+            this.groupBox1.Location = new System.Drawing.Point(288, 433);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(224, 61);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtrowania po kategorii";
+            // 
+            // buttonFirltrCat
+            // 
+            this.buttonFirltrCat.Location = new System.Drawing.Point(134, 18);
+            this.buttonFirltrCat.Name = "buttonFirltrCat";
+            this.buttonFirltrCat.Size = new System.Drawing.Size(75, 23);
+            this.buttonFirltrCat.TabIndex = 2;
+            this.buttonFirltrCat.Text = "Filtruj";
+            this.buttonFirltrCat.UseVisualStyleBackColor = true;
+            this.buttonFirltrCat.Click += new System.EventHandler(this.buttonFirltrCat_Click);
+            // 
+            // buttonfiltrName
+            // 
+            this.buttonfiltrName.Location = new System.Drawing.Point(133, 18);
+            this.buttonfiltrName.Name = "buttonfiltrName";
+            this.buttonfiltrName.Size = new System.Drawing.Size(75, 23);
+            this.buttonfiltrName.TabIndex = 3;
+            this.buttonfiltrName.Text = "Filtruj";
+            this.buttonfiltrName.UseVisualStyleBackColor = true;
+            this.buttonfiltrName.Click += new System.EventHandler(this.buttonfiltrName_Click);
             // 
             // UserControlProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxfilterName);
             this.Controls.Add(this.groupBoxEditProduct);
             this.Controls.Add(this.groupBoxDeleteProduct);
             this.Controls.Add(this.labelinfoProducts);
             this.Controls.Add(this.groupBoxAddProduct);
             this.Controls.Add(this.dataGridViewProducts);
             this.Name = "UserControlProducts";
-            this.Size = new System.Drawing.Size(653, 445);
+            this.Size = new System.Drawing.Size(725, 521);
             this.groupBoxEditProduct.ResumeLayout(false);
             this.groupBoxEditProduct.PerformLayout();
             this.groupBoxDeleteProduct.ResumeLayout(false);
@@ -293,6 +403,8 @@
             this.groupBoxAddProduct.ResumeLayout(false);
             this.groupBoxAddProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            this.groupBoxfilterName.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +433,15 @@
         private System.Windows.Forms.MaskedTextBox MTBProducerEdit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox MTBProducerNew;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBoxCategoryEdit;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBoxCategoryNew;
+        private System.Windows.Forms.GroupBox groupBoxfilterName;
+        private System.Windows.Forms.ComboBox comboBoxName;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonfiltrName;
+        private System.Windows.Forms.Button buttonFirltrCat;
     }
 }

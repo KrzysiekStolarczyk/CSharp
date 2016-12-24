@@ -83,6 +83,22 @@ namespace DotNetZaliczenie
             return ret;
         }
 
+        public string ExecuteQueryWithParametersStokScalarString(string procedureName, Stack<string> nazwaZmiennej, Stack<SqlDbType> typ, Stack<string> value)
+        {
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandText = procedureName;
+            cmd.CommandType = CommandType.StoredProcedure;
+            while (nazwaZmiennej.Count > 0)
+            {
+                cmd.Parameters.Add(nazwaZmiennej.Pop(), typ.Pop()).Value = value.Pop();
+            }
+            connect.Open();
+
+            string ret = cmd.ExecuteScalar().ToString();
+            connect.Close();
+            return ret;
+        }
+
         public int ExecuteQueryStokScalar(string query)
         {
             SqlCommand cmd = connect.CreateCommand();
