@@ -32,6 +32,10 @@ namespace GeneticAlgorithmWF
 
         public int GetRandomNumber(int min, int max)
         {
+            if(NumberInStack.Count==0)
+            {
+                getNumbersFromFile();
+            }
             return NumberInStack.Pop() % ((max - min) + 1);
         }
 

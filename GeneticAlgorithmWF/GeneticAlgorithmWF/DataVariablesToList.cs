@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GeneticAlgorithmWF
+﻿namespace GeneticAlgorithmWF
 {
     class DataVariablesToList
     {
@@ -26,9 +20,7 @@ namespace GeneticAlgorithmWF
         {
             Percentage = "";
             PercentageAsDouble = 0;
-            PartSum = "";
-
-            
+            PartSum = "";        
         }
 
         public DataVariablesToList(string nameSubject, string randomNumberAsBinary, double functionResult, int randomNumber) : this()
@@ -38,7 +30,5 @@ namespace GeneticAlgorithmWF
             FunctionResult = functionResult;
             RandomNumber = randomNumber;
         }
-
-
     }
 }

@@ -31,6 +31,6 @@ G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wi
 G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wpf.pdb
 G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\bin\Debug\LiveCharts.Wpf.xml
 G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.csprojResolveAssemblyReference.cache
-G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.Form1.resources
 G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.Properties.Resources.resources
 G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.csproj.GenerateResource.Cache
+G:\Git\C# Projekty\GeneticAlgorithmWF\GeneticAlgorithmWF\obj\Debug\GeneticAlgorithmWF.MainView.resources

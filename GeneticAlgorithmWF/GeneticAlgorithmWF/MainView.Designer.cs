@@ -1,6 +1,6 @@
 ﻿namespace GeneticAlgorithmWF
 {
-    partial class Form1
+    partial class MainView
     {
         /// <summary>
         /// Required designer variable.
@@ -49,6 +49,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.chartAxis = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBoxConfig.SuspendLayout();
@@ -153,7 +154,7 @@
             this.groupBoxConfig.Controls.Add(this.label1);
             this.groupBoxConfig.Location = new System.Drawing.Point(627, 21);
             this.groupBoxConfig.Name = "groupBoxConfig";
-            this.groupBoxConfig.Size = new System.Drawing.Size(300, 100);
+            this.groupBoxConfig.Size = new System.Drawing.Size(211, 100);
             this.groupBoxConfig.TabIndex = 9;
             this.groupBoxConfig.TabStop = false;
             this.groupBoxConfig.Text = "Parametry";
@@ -230,15 +231,26 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartAxis.Series.Add(series2);
-            this.chartAxis.Size = new System.Drawing.Size(452, 256);
+            this.chartAxis.Size = new System.Drawing.Size(580, 256);
             this.chartAxis.TabIndex = 13;
             this.chartAxis.Text = "chart3";
             // 
-            // Form1
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(865, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 57);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Automat";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 856);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.chartAxis);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -248,7 +260,7 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonSelekcja);
-            this.Name = "Form1";
+            this.Name = "MainView";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -277,6 +289,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAxis;
+        private System.Windows.Forms.Button button2;
     }
 }
 
