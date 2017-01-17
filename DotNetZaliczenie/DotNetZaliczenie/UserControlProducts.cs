@@ -88,6 +88,7 @@ namespace DotNetZaliczenie
             MTBProducerNew.Clear();
             comboBoxCategoryNew.SelectedText= "Wybierz kategorię";
             MessageBox.Show(result == 1 ? "Operacja wykonana poprawnie." : "Błąd po stronie bazy.");
+            LoadAllComboBox();//dodane
         }
 
         public void DeleteProduct()

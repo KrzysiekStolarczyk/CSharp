@@ -99,6 +99,8 @@ namespace DotNetZaliczenie
             MTBCountryNew.Clear();
             MTBHomePhoneNew.Clear();
             MessageBox.Show(result == 1 ? "Operacja wykonana poprawnie." : "Błąd po stronie bazy.");
+
+            LoadAllComboBox();//dodane 
         }
 
         public void DeleteClient()
