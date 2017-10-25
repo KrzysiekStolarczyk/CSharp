@@ -1,0 +1,12 @@
+
+Dodawanie do listy lub do stringa
+
+        Dim info As String = ""
+        Dim res As DataTable
+        res = Module1.ExecuteQuery(("EXECUTE dbo.CheckBeAbleAddCalc"), connStringSAF_SKLEPOWY, "whatIf", "dbo.CheckBeAbleAddCalc")
+
+        Dim a As New List(Of String)
+        res.AsEnumerable().ForEach(Sub(x) a.Add(x.Item(0)))
+        res.AsEnumerable().ForEach(Sub(x) info += x.Item(0))
+
+
